@@ -99,13 +99,30 @@
         <div style="color: #fff;">2. GraphQL Schema Validator (Score: 54)</div>
       </div>
       <p>An autonomous system that discovers high-signal, unsolved DX problems. It parallelizes 3 specialized agents to scan forums and repos, returning ranked opportunities with a custom-weighted confidence score (pain × demand × competition).</p>
-      <span class="cb">Built with Claude Code + pLimit</span>
+      <span class="cb">Built with Claude Code in <24h</span>
       <div class="stk"><span class="pi">Node.js</span><span class="pi">Claude API</span><span class="pi">Parallel Agents</span><span class="pi">Market Validation</span></div>
       <div class="cl"><a href="https://github.com/currocasas88/dx-opportunity-scanner" target="_blank" class="ca">GitHub</a></div>
     </div>
     <div class="card">
       <span class="tag">Open Source · AI Agents for Market Intelligence</span>
       <h3>DX Validation Toolkit</h3>
+      <div class="cv" style="background: #fdfaf5; border: 1px solid #e0d7c6; padding: 15px; border-radius: 8px;">
+        <div style="font-family: sans-serif; color: #1a1a1a;">
+          <div style="font-weight: bold; border-bottom: 1px solid #ddd; padding-bottom: 5px; margin-bottom: 10px; font-size: 13px;">TECHNICAL VALIDATION REPORT</div>
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <span style="font-size: 11px; color: #666;">Confidence Score:</span>
+            <span style="font-weight: bold; color: #2e7d32;">67/100</span>
+          </div>
+          <div style="height: 6px; background: #eee; border-radius: 3px; margin: 8px 0;">
+            <div style="width: 67%; height: 100%; background: #4caf50; border-radius: 3px;"></div>
+          </div>
+          <div style="font-size: 10px; color: #888; line-height: 1.4;">
+            ✅ High Search Demand (96/100)<br>
+            ✅ Forum Pain Signals (92/100)<br>
+            🚩 0 Direct Competitors (Red Flag)
+          </div>
+        </div>
+      </div>
       <p>5 autonomous AI agents that validate startup ideas in under an hour. They analyze forums, GitHub issues, search demand, and competitor traction. I used it to kill a SaaS idea in <5 days before writing a line of product code. Then open-sourced it.</p>
       <p style="font-style: italic; color: #666;">With AI, anyone can build. Knowing what to build is the scarce skill.</p>
       <span class="cb">Built with Claude Code in <24h</span>
@@ -123,15 +140,32 @@
       <span class="cb">Built with Claude Code + Python</span>
       <div class="stk"><span class="pi">Python</span><span class="pi">Gemini AI</span><span class="pi">Shopify API</span><span class="pi">Google Analytics</span><span class="pi">Claude Code</span></div>
     </div>
+
     <div class="card">
-      <span class="tag">Internal Tooling · AI Agents · Amazon</span>
-      <h3>Alexa+ Studio: Bug-Fixing Agent</h3>
-      <div class="cv" style="background: #f4f4f4; border: 1px solid #ddd; display: flex; align-items: center; justify-content: center; height: 150px; border-radius: 8px;">
-         <p style="font-size: 11px; color: #999; text-align: center; padding: 0 20px;">[ Logic Flow: Error Ingestion → Agent Reasoner → Code Sandbox → Verified PR ]</p>
+      <span class="tag">Technical Leadership · Amazon</span>
+      <h3>Alexa+ Studio</h3>
+      <div class="cv" style="background: #1a1a1a; padding: 15px; border-radius: 8px; color: #fff; font-family: monospace; font-size: 11px;">
+        <div style="color: #00caee;">// Alexa+ IDE Ecosystem</div>
+        <div style="margin-top: 5px;">> Orchestrating dev-tooling at scale</div>
+        <div style="margin-top: 5px; color: #888;">[Core Services: IDE Extension, CLI, Sandbox]</div>
       </div>
-      <p>Led the development of an autonomous bug-fixing agent for Alexa's developer ecosystem. The agent analyzed stack traces, reasoned through code dependencies in a sandbox, and proposed verified fixes, reducing manual triage time for core engineering teams.</p>
-      <span class="cb">Team Leadership · LLM Orchestration</span>
-      <div class="stk"><span class="pi">Java/Python</span><span class="pi">Bedrock</span><span class="pi">Automated Reasoning</span><span class="pi">CI/CD Integration</span></div>
+      <p>Led the product strategy and technical infrastructure for Alexa’s developer IDE. Managed a cross-functional team to deliver a unified environment that abstracted complex cloud interactions, enabling thousands of developers to build and test voice skills with lower friction.</p>
+      <span class="cb">Executive Leadership · Developer Platforms</span>
+      <div class="stk"><span class="pi">Product Strategy</span><span class="pi">AWS Architecture</span><span class="pi">IDE Tooling</span></div>
+    </div>
+
+    <div class="card">
+      <span class="tag">AI Engineering · Autonomous Agents</span>
+      <h3>Bug-Fixing Agent (Alexa)</h3>
+      <div class="cv" style="background: #1a1a1a; padding: 15px; border-radius: 8px; color: #00ff41; font-family: monospace; font-size: 11px;">
+        <div>[INCOMING] Stack Trace: NullPointerException...</div>
+        <div style="color: #fff; margin-top: 5px;">> Agent Reasoning: Inspecting Context...</div>
+        <div style="color: #fff;">> Suggested Fix Generated & Verified.</div>
+        <div style="color: #ff9800;">[PR] Open for review (Reduction: 40% Triage Time)</div>
+      </div>
+      <p>Built an autonomous internal agent that ingested error logs and stack traces to propose verified code fixes. By creating a sandboxed reasoning layer, the agent significantly reduced manual engineering triage time and expedited the Alexa+ Studio release cycle.</p>
+      <span class="cb">AI Implementation · Logic Orchestration</span>
+      <div class="stk"><span class="pi">Bedrock</span><span class="pi">Python</span><span class="pi">Automated Reasoning</span><span class="pi">Sandboxing</span></div>
     </div>
 <!-- 
     <div class="card">
@@ -266,20 +300,25 @@
     <div class="case">
       <div>
         <div class="ch">
-          <div class="cl2" style="background: #eee; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 4px; font-weight: bold;">ITAV</div>
-          <div><div class="cco">ITAV · Personal Venture</div><div class="cp">2023 - 2024</div></div>
+          <img src="assets/itav.png" alt="ITAV" class="cl2"/>
+          <div><div class="cco">ITAV · Personal Venture</div><div class="cp">2017 – 2019</div></div>
         </div>
         <div class="cr">Founder & Product Lead</div>
         <h3>Simplifying group travel through intelligent coordination</h3>
-        <p>Conceived and built a travel coordination platform to solve the fragmentation of group trip planning. Managed the end-to-end product lifecycle, from initial user research and UX wireframing to technical architecture. Though not an autonomous agent, it served as the foundation for my transition into AI-driven service coordination.</p>
+        <p>Conceived and built a travel-tech platform to solve the fragmentation of group trip planning. Managed the end-to-end product lifecycle, from initial user research to technical architecture. Launched a cross-platform app that generated instant customized trip plans, serving as a precursor to my current focus on AI-driven service coordination.</p>
         <div class="dec"><strong>Key decision</strong>Pivoted from a broad travel marketplace to a narrow "coordination-first" tool. By focusing on the specific friction of scheduling and payments, we saw higher user retention than generic itinerary builders.</div>
         <div class="outs">
-          <div class="out"><div class="on">MVP</div><div class="ol">Shipped in 3mo</div></div>
-          <div class="out"><div class="on">User-Led</div><div class="ol">Direct UX Validation</div></div>
+          <div class="out"><div class="on">10k+</div><div class="ol">Active Users</div></div>
+          <div class="out"><div class="on">€20k</div><div class="ol">Revenue (6 mo)</div></div>
+          <div class="out"><div class="on">3 mo</div><div class="ol">Time to MVP</div></div>
+          <div class="out"><div class="on">85%</div><div class="ol">Positive UX Signal</div></div>
         </div>
       </div>
-      <div class="cvis" onclick="openLB(this.querySelector('img'))">
-        <img src="assets/itav-mockup.png" alt="ITAV App" loading="lazy"/>
+      <div class="cvis nz">
+        <iframe src="https://www.youtube.com/embed/B-ofS6-0Un8" title="ITAV App demo"
+          style="width:100%; height:100%; border-radius:8px; border:none;"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen loading="lazy"></iframe>
       </div>
     </div>
 
