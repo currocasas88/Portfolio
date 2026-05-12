@@ -303,25 +303,3 @@ h1        { animation: fadeUp .55s .08s ease both; }
   .ca2 .bn, .ca2 .bg { flex: 1; max-width: 160px; justify-content: center; }
 }
 
-.case .cvis.nz {
-  aspect-ratio: 16/9;
-  min-height: 400px;
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-.case .cvis.nz iframe {
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
-  border: none;
-  display: block;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-@media (max-width: 768px) {
-  .case .cvis.nz {
-    min-height: 300px;
-  }
-}
