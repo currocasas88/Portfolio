@@ -121,7 +121,7 @@
           </div>
         </div>
       </div>
-      <p>An autonomous system that discovers high-signal, unsolved DX problems. It parallelizes 3 specialized agents to scan forums and repos, returning ranked opportunities with a custom-weighted confidence score (pain × demand × competition).</p>
+      <p>Built an autonomous market research system that discovers high-signal, unsolved DX problems. Parallelizes 3 specialized agents scanning forums, GitHub issues, and Discord to identify demand signals, community pain points, and competitive gaps. Ranks opportunities by custom confidence formula, enabling product teams to prioritize which tools drive maximum impact. Demonstrates AI's capability to accelerate strategic research cycles and reduce bias in opportunity assessment.</p>
       <span class="cb">Built with Claude Code in <24h</span>
       <div class="stk"><span class="pi">Node.js</span><span class="pi">Claude API</span><span class="pi">Parallel Agents</span><span class="pi">Market Validation</span></div>
       <div class="cl"><a href="https://github.com/currocasas88/dx-opportunity-scanner" target="_blank" class="ca">GitHub</a></div>
@@ -132,7 +132,7 @@
       <h3>DX Validation Toolkit</h3>
       <div class="cv" style="background: #fdfaf5; border: 1px solid #e0d7c6; padding: 15px; border-radius: 8px;">
         <div style="font-family: sans-serif; color: #1a1a1a;">
-          <div style="font-weight: bold; border-bottom: 1px solid #ddd; padding-bottom: 5px; margin-bottom: 10px; font-size: 13px;">Shopify API VALIDATION REPORT</div>
+          <div style="font-weight: bold; border-bottom: 1px solid #ddd; padding-bottom: 5px; margin-bottom: 10px; font-size: 13px;">SHOPIFY API VALIDATION REPORT</div>
           <div style="display: flex; align-items: center; justify-content: space-between;">
             <span style="font-size: 11px; color: #666;">Confidence Score:</span>
             <span style="font-weight: bold; color: #2e7d32;">67/100</span>
@@ -145,7 +145,9 @@
             ✅ <strong>Forum Pain:</strong> 92/100<br>
             ✅ <strong>Technical Debt:</strong> 88/100<br>
             ✅ <strong>GitHub Signal:</strong> 81/100<br>
-            🚩 <strong>Competitors:</strong> 0/100
+            🚩 <strong>Competitors:</strong> 0/100 
+            🚩 But: Partial Solution Existing (Shopify Tooling): 40/100
+            <strong>Net Risk: Medium</strong>
           </div>
         </div>
       </div>
@@ -175,21 +177,21 @@
         <div style="margin-top: 5px;">> Orchestrating dev-tooling at scale</div>
         <div style="margin-top: 5px; color: #888;">[Core Services: IDE Extension, CLI, Sandbox]</div>
       </div>
-      <p>Led the product strategy and technical infrastructure for Alexa’s developer IDE. Managed a cross-functional team to deliver a unified environment that abstracted complex cloud interactions, enabling thousands of developers to build and test voice skills with lower friction.</p>
+      <p>Architected and drove vision for Alexa+ Studio, a unified AI-assisted development platform transforming how builders develop customer experiences. Designed six-layer system with hero agents addressing the complete development lifecycle: Quality Agent (reduce issue-to-fix from weeks to days, 70% fewer post-launch defects), Getting Started Agent (weeks to single day onboarding), Visual-on-Device Agent (80% time reduction across Echo Show / Fire TV / mobile), International Agent (streamlined global deployment).</p>
       <span class="cb">Executive Leadership · Developer Platforms</span>
       <div class="stk"><span class="pi">Product Strategy</span><span class="pi">AWS Architecture</span><span class="pi">IDE Tooling</span></div>
     </div>
 
     <div class="card">
       <span class="tag">AI Engineering · Autonomous Agents</span>
-      <h3>Bug-Fixing Agent (Alexa)</h3>
+      <h3>Alexa+ Bug-Fixing Agent (BFA) </h3>
       <div class="cv" style="background: #1a1a1a; padding: 15px; border-radius: 8px; color: #00ff41; font-family: monospace; font-size: 11px;">
         <div>[INCOMING] Stack Trace: NullPointerException...</div>
         <div style="color: #fff; margin-top: 5px;">> Agent Reasoning: Inspecting Context...</div>
         <div style="color: #fff;">> Suggested Fix Generated & Verified.</div>
         <div style="color: #ff9800;">[PR] Open for review (Reduction: 40% Triage Time)</div>
       </div>
-      <p>Built an autonomous internal agent that ingested error logs and stack traces to propose verified code fixes. By creating a sandboxed reasoning layer, the agent significantly reduced manual engineering triage time and expedited the Alexa+ Studio release cycle.</p>
+      <p>Diagnosed critical defect resolution crisis: 30,000 tickets weekly, 4.5% resolution rate, 18.4 day average resolution time, 67% duplicates, 35% misrouted, engineers spending 5+ hours per ticket in manual triage. Designed two-workflow AI system: end-to-end resolution assistance for valid defects + upstream quality improvement (deduplication, routing accuracy, invalid ticket filtering). Built BFA with modular components (ticket parsing, root cause analysis, reproducibility verification, test case generation, solution generation) using MCP standards for reusability. Pilot with Math and Shopping teams validated 65-98% component accuracy, 4 hours saved per ticket, 50% resolution time reduction.</p>
       <span class="cb">AI Implementation · Logic Orchestration</span>
       <div class="stk"><span class="pi">Bedrock</span><span class="pi">Python</span><span class="pi">Automated Reasoning</span><span class="pi">Sandboxing</span></div>
     </div>
