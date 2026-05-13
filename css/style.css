@@ -289,23 +289,29 @@ h1        { animation: fadeUp .55s .08s ease both; }
   .hero { 
     grid-template-columns: 1fr; 
     min-height: auto;
-    display: flex;
-    flex-direction: column-reverse;
+    display: grid;
+  }
+  .hl { 
+    padding: 36px 20px;
+    grid-column: 1;
+    grid-row: 1;
+    order: 1;
   }
   .hr { 
     display: flex;
     border-left: none;
-    border-bottom: 1px solid var(--rule);
+    border-bottom: none;
     padding: 20px;
     background: transparent;
-    margin-bottom: 20px;
+    grid-column: 1;
+    grid-row: 2;
+    order: 2;
   }
   .hr img.photo { width: 120px; height: 120px; }
   .stats { grid-template-columns: repeat(2, 1fr); gap: 8px; width: 100%; }
   .stat { padding: 10px 12px; }
   .sn { font-size: 18px; }
   .sl { font-size: 10px; }
-  .hl { padding: 36px 20px; }
   .ha { flex-direction: row; gap: 8px; }
   .ha .bn, .ha .bg { flex: 1; justify-content: center; text-align: center;
                      padding: 12px 12px; font-size: 13px; }
