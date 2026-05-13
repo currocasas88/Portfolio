@@ -288,17 +288,20 @@ h1        { animation: fadeUp .55s .08s ease both; }
   section { padding: 52px 20px; }
   .hero { grid-template-columns: 1fr; min-height: auto; }
   .hr { 
+    display: flex;
+    order: 1;
     border-left: none;
-    padding: 36px 20px;
+    border-bottom: 1px solid var(--rule);
+    padding: 20px;
     background: transparent;
-    grid-column: 1;
+    margin-bottom: 20px;
   }
-  .hr img.photo { width: 140px; height: 140px; }
-  .stats { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .hr img.photo { width: 120px; height: 120px; }
+  .stats { grid-template-columns: repeat(2, 1fr); gap: 8px; width: 100%; }
   .stat { padding: 10px 12px; }
   .sn { font-size: 18px; }
   .sl { font-size: 10px; }
-  .hl { padding: 84px 20px 44px; }
+  .hl { padding: 36px 20px; order: 2; }
   .ha { flex-direction: row; gap: 8px; }
   .ha .bn, .ha .bg { flex: 1; justify-content: center; text-align: center;
                      padding: 12px 12px; font-size: 13px; }
