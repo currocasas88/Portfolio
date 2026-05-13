@@ -287,7 +287,17 @@ h1        { animation: fadeUp .55s .08s ease both; }
   .nav-links { display: none; }
   section { padding: 52px 20px; }
   .hero { grid-template-columns: 1fr; min-height: auto; }
-  .hr { display: none; }
+  .hr { 
+    border-left: none;
+    padding: 36px 20px;
+    background: transparent;
+    grid-column: 1;
+  }
+  .hr img.photo { width: 140px; height: 140px; }
+  .stats { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .stat { padding: 10px 12px; }
+  .sn { font-size: 18px; }
+  .sl { font-size: 10px; }
   .hl { padding: 84px 20px 44px; }
   .ha { flex-direction: row; gap: 8px; }
   .ha .bn, .ha .bg { flex: 1; justify-content: center; text-align: center;
