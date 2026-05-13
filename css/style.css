@@ -286,10 +286,14 @@ h1        { animation: fadeUp .55s .08s ease both; }
   nav { padding: 0 18px; }
   .nav-links { display: none; }
   section { padding: 52px 20px; }
-  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero { 
+    grid-template-columns: 1fr; 
+    min-height: auto;
+    display: flex;
+    flex-direction: column-reverse;
+  }
   .hr { 
     display: flex;
-    order: 1;
     border-left: none;
     border-bottom: 1px solid var(--rule);
     padding: 20px;
@@ -301,7 +305,7 @@ h1        { animation: fadeUp .55s .08s ease both; }
   .stat { padding: 10px 12px; }
   .sn { font-size: 18px; }
   .sl { font-size: 10px; }
-  .hl { padding: 36px 20px; order: 2; }
+  .hl { padding: 36px 20px; }
   .ha { flex-direction: row; gap: 8px; }
   .ha .bn, .ha .bg { flex: 1; justify-content: center; text-align: center;
                      padding: 12px 12px; font-size: 13px; }
