@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- ── SEO ISOLATION — DO NOT REMOVE ─────────────────────────────────── -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <!-- ──────────────────────────────────────────────────────────────────── -->
+
+  <title>Shopify Consulting — Curro Casas</title>
+  <meta name="description" content="Technical Shopify consulting: performance engineering, custom Liquid architecture, and AI-powered reporting for high-growth DTC brands."/>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231a7a4a'/><text y='75' font-size='72' x='50' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>C</text></svg>"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/>
+
+  <style>
+    /* ── RESET & TOKENS ──────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:     #1c1c1e;
+      --ink-2:   #48484a;
+      --ink-3:   #8e8e93;
+      --bg:      #ffffff;
+      --bg-2:    #f9f8f5;
+      --bg-3:    #f0ebe0;
+      --green:   #1a7a4a;
+      --gdk:     #145e38;
+      --glt:     #e4f2eb;
+      --rule:    #e5e5ea;
+      --r:       14px;
+      --rs:      8px;
+      --max:     1160px;
+      --serif:   'Fraunces', Georgia, serif;
+      --sans:    'Plus Jakarta Sans', sans-serif;
+      --mono:    'DM Mono', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: var(--sans);
+           line-height: 1.6; -webkit-font-smoothing: antialiased; font-size: 16px; }
+    img  { max-width: 100%; display: block; }
+    a    { color: inherit; }
+
+    /* ── LAYOUT HELPERS ─────────────────────────────────────────────────── */
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 48px; }
+    .rule { height: 1px; background: linear-gradient(90deg, transparent, var(--rule) 20%, var(--rule) 80%, transparent); }
+
+    /* ── BUTTONS ────────────────────────────────────────────────────────── */
+    .btn-primary {
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: var(--sans); font-size: 14px; font-weight: 600;
+      color: #fff; background: var(--green); text-decoration: none;
+      padding: 13px 28px; border-radius: 100px; border: none; cursor: pointer;
+      transition: background .15s, transform .1s;
+    }
+    .btn-primary:hover { background: var(--gdk); transform: translateY(-1px); }
+    .btn-outline {
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: var(--sans); font-size: 14px; font-weight: 500;
+      color: var(--green); background: none; text-decoration: none;
+      padding: 12px 26px; border-radius: 100px; border: 1.5px solid var(--green);
+      cursor: pointer; transition: background .15s;
+    }
+    .btn-outline:hover { background: var(--glt); }
+
+    /* ── NAV ────────────────────────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 60px;
+      background: rgba(255,255,255,.95); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav-logo { font-size: 17px; font-weight: 700; letter-spacing: -.02em;
+                color: var(--ink); text-decoration: none; }
+    .nav-logo span { color: var(--green); }
+    .nav-cta { display: flex; gap: 8px; align-items: center; }
+    .nav-cta a { font-size: 13px; font-weight: 500; color: var(--ink-2);
+                 text-decoration: none; padding: 6px 14px; border-radius: 100px;
+                 transition: background .15s; }
+    .nav-cta a:hover { background: var(--rule); }
+
+    /* ── EYE TAG ────────────────────────────────────────────────────────── */
+    .eyetag {
+      font-family: var(--mono); font-size: 11px; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--ink-3); margin-bottom: 12px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .eyetag::before { content: ""; display: block; width: 16px; height: 1.5px; background: var(--ink-3); }
+
+    /* ── HERO ───────────────────────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh; padding-top: 60px;
+      display: flex; align-items: center;
+      background: var(--bg-3);
+    }
+    .hero-inner { max-width: var(--max); margin: 0 auto; padding: 80px 48px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--glt); color: var(--gdk);
+      font-family: var(--mono); font-size: 11px; letter-spacing: .06em;
+      padding: 5px 13px; border-radius: 100px; margin-bottom: 28px; width: fit-content;
+    }
+    .hero-badge::before {
+      content: ""; width: 6px; height: 6px; background: var(--green);
+      border-radius: 50%; animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.75)} }
+    .hero h1 {
+      font-size: clamp(34px, 4.5vw, 62px); font-weight: 700; line-height: 1.06;
+      letter-spacing: -.03em; margin-bottom: 20px; max-width: 820px;
+    }
+    .hero h1 em { font-family: var(--serif); font-style: italic; font-weight: 300; color: var(--green); }
+    .hero-sub {
+      font-size: clamp(15px, 1.5vw, 18px); color: var(--ink-2); line-height: 1.75;
+      max-width: 580px; margin-bottom: 36px;
+    }
+
+    /* USP feature list between subtitle and CTA */
+    .hero-usps {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+      max-width: 640px; margin-bottom: 36px;
+    }
+    .hero-usp {
+      display: flex; gap: 12px; align-items: flex-start;
+      background: #fff; border: 1.5px solid var(--rule); border-radius: var(--rs);
+      padding: 14px 16px;
+    }
+    .hero-usp-icon {
+      width: 28px; height: 28px; background: var(--glt); border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 14px;
+    }
+    .hero-usp-text { font-size: 13px; color: var(--ink-2); line-height: 1.55; }
+    .hero-usp-text strong { color: var(--ink); font-weight: 600; display: block; margin-bottom: 2px; }
+
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* ── TRUST BANNER ───────────────────────────────────────────────────── */
+    .trust {
+      background: #fff; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+      padding: 28px 48px;
+    }
+    .trust-inner {
+      max-width: var(--max); margin: 0 auto;
+      display: flex; align-items: center; gap: 32px; flex-wrap: wrap;
+    }
+    .trust-label {
+      font-family: var(--mono); font-size: 10px; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--ink-3); white-space: nowrap; flex-shrink: 0;
+    }
+    .trust-divider { width: 1px; height: 20px; background: var(--rule); flex-shrink: 0; }
+    .trust-brands { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+    .trust-brand {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 13px; font-weight: 600; color: var(--ink-2);
+    }
+    .trust-brand img { height: 28px; width: auto; object-fit: contain; }
+    .trust-brand.placeholder { color: var(--ink-3); font-style: italic; font-weight: 400; font-size: 12px; }
+
+    /* ── PARADIGM GRID ──────────────────────────────────────────────────── */
+    .paradigm { padding: 80px 0; background: var(--bg-2); }
+    .paradigm .wrap { }
+    .p-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px;
+    }
+    .p-col {
+      background: #fff; border: 1.5px solid var(--rule); border-radius: var(--r); padding: 28px 24px;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .p-col:hover { border-color: var(--green); box-shadow: 0 6px 22px rgba(26,122,74,.08); }
+    .p-col-num {
+      font-family: var(--mono); font-size: 10px; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--ink-3); margin-bottom: 16px;
+    }
+    .p-col-icon {
+      font-size: 28px; margin-bottom: 14px; display: block;
+    }
+    .p-col h3 { font-size: 17px; font-weight: 700; letter-spacing: -.02em; margin-bottom: 8px; }
+    .p-col-sub {
+      font-family: var(--mono); font-size: 10px; letter-spacing: .08em;
+      text-transform: uppercase; color: var(--green); margin-bottom: 10px;
+    }
+    .p-col p { font-size: 13.5px; color: var(--ink-2); line-height: 1.7; }
+
+    /* ── CASE STUDY ─────────────────────────────────────────────────────── */
+    .case-study { padding: 80px 0; background: #fff; }
+    .case-card {
+      background: var(--bg-2); border: 1.5px solid var(--rule); border-radius: var(--r);
+      padding: 40px; margin-top: 40px;
+      display: grid; grid-template-columns: 1fr 38%; gap: 40px; align-items: start;
+    }
+    .case-header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+    .case-logo {
+      width: 44px; height: 44px; border-radius: 10px; border: 1px solid var(--rule);
+      padding: 6px; background: #fff; object-fit: contain; flex-shrink: 0;
+    }
+    .case-co { font-family: var(--mono); font-size: 11px; letter-spacing: .1em;
+               text-transform: uppercase; color: var(--green); margin-bottom: 2px; }
+    .case-period { font-size: 12px; color: var(--ink-3); }
+    .case-role { font-size: 13px; color: var(--ink-2); font-style: italic;
+                 font-family: var(--serif); margin-bottom: 14px; }
+    .case-card h3 {
+      font-size: clamp(19px, 2.2vw, 26px); font-weight: 700; letter-spacing: -.025em;
+      line-height: 1.18; margin-bottom: 12px;
+    }
+    .case-card > div > p {
+      font-size: 14px; color: var(--ink-2); line-height: 1.8; margin-bottom: 20px;
+    }
+    .metrics-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 0;
+    }
+    .metric {
+      background: #fff; border: 1.5px solid var(--rule); border-radius: var(--rs); padding: 14px 16px;
+    }
+    .metric-num {
+      font-size: 22px; font-weight: 700; letter-spacing: -.03em; color: var(--green);
+      line-height: 1; margin-bottom: 3px;
+    }
+    .metric-label { font-size: 10px; color: var(--ink-3); text-transform: uppercase; letter-spacing: .05em; font-weight: 500; }
+
+    .case-callout {
+      border-left: 2px solid var(--ink-2); background: var(--bg-2);
+      padding: 20px 24px; margin-top: 24px; border-radius: 0 var(--rs) var(--rs) 0;
+    }
+    .callout-label {
+      font-family: var(--mono); font-size: 10px; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--ink-2); display: block; margin-bottom: 8px;
+    }
+    .callout-text { font-size: 13.5px; color: var(--ink-2); line-height: 1.7; margin: 0; }
+
+    .case-visual {
+      border-radius: var(--rs); overflow: hidden; border: 1px solid var(--rule);
+      position: sticky; top: 80px;
+    }
+    .case-visual img { width: 100%; display: block; object-fit: cover; }
+
+    .case-link {
+      display: inline-flex; align-items: center; font-size: 13px; font-weight: 600;
+      color: var(--green); text-decoration: none; padding: 9px 20px;
+      border-radius: 100px; border: 1.5px solid var(--green);
+      transition: background .15s; margin-top: 20px; width: fit-content;
+    }
+    .case-link:hover { background: var(--glt); }
+
+    /* ── SERVICES ───────────────────────────────────────────────────────── */
+    .services { padding: 80px 0; background: var(--bg-3); }
+    .svc-list { margin-top: 40px; display: flex; flex-direction: column; gap: 2px; }
+    .svc-item {
+      display: flex; gap: 28px; align-items: flex-start;
+      background: rgba(255,255,255,.7); border: 1.5px solid var(--rule);
+      border-radius: var(--r); padding: 28px 28px;
+      transition: background .2s, border-color .2s;
+    }
+    .svc-item:hover { background: #fff; border-color: var(--green); }
+    .svc-num {
+      font-family: var(--mono); font-size: 11px; letter-spacing: .08em;
+      color: var(--ink-3); flex-shrink: 0; padding-top: 3px; min-width: 36px;
+    }
+    .svc-body { flex: 1; }
+    .svc-name { font-size: 16px; font-weight: 700; letter-spacing: -.02em; margin-bottom: 8px; }
+    .svc-desc { font-size: 13.5px; color: var(--ink-2); line-height: 1.72; margin: 0; }
+
+    /* ── TESTIMONIAL ────────────────────────────────────────────────────── */
+    .testimonial { padding: 80px 0; background: #fff; }
+    .testimonial-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+    blockquote {
+      font-family: var(--serif); font-style: italic; font-weight: 300;
+      font-size: clamp(18px, 2vw, 24px); line-height: 1.6; color: var(--ink);
+      margin-bottom: 24px; position: relative;
+    }
+    blockquote::before {
+      content: "\201C"; font-size: 80px; line-height: .6; vertical-align: -.4em;
+      color: var(--glt); font-family: var(--serif); margin-right: 4px;
+    }
+    .testimonial-author {
+      font-family: var(--mono); font-size: 11px; letter-spacing: .08em;
+      text-transform: uppercase; color: var(--ink-3);
+    }
+    .testimonial-placeholder {
+      background: var(--bg-2); border: 1.5px dashed var(--rule); border-radius: var(--r);
+      padding: 40px 32px; text-align: center;
+    }
+    .testimonial-placeholder p {
+      font-size: 14px; color: var(--ink-3); font-style: italic; line-height: 1.7;
+    }
+
+    /* ── CONTACT FORM ───────────────────────────────────────────────────── */
+    .contact { padding: 80px 0; background: var(--bg-2); }
+    .contact-inner {
+      max-width: 680px; margin: 0 auto; padding: 0 48px;
+    }
+    .form-card {
+      background: #fff; border: 1.5px solid var(--rule); border-radius: var(--r);
+      padding: 40px; margin-top: 40px;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+    .form-group label {
+      font-family: var(--mono); font-size: 10px; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--ink-2); font-weight: 400;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      font-family: var(--sans); font-size: 14px; color: var(--ink);
+      background: var(--bg-2); border: 1.5px solid var(--rule);
+      border-radius: var(--rs); padding: 11px 14px;
+      transition: border-color .15s; outline: none; width: 100%;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--green); background: #fff; }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-submit { width: 100%; padding: 14px; font-size: 15px; margin-top: 4px; }
+    .form-success {
+      display: none; text-align: center; padding: 28px;
+      background: var(--glt); border-radius: var(--rs); margin-top: 20px;
+    }
+    .form-success p { color: var(--gdk); font-weight: 600; margin-bottom: 4px; }
+    .form-success span { font-size: 13px; color: var(--gdk); opacity: .8; }
+
+    /* ── FOOTER ─────────────────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--rule); padding: 20px 48px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: #fff;
+    }
+    .footer-copy { font-family: var(--mono); font-size: 11px; color: var(--ink-3); }
+    .footer-links { display: flex; gap: 18px; }
+    .footer-links a {
+      font-size: 13px; font-weight: 500; color: var(--ink-2);
+      text-decoration: none; transition: color .15s;
+    }
+    .footer-links a:hover { color: var(--green); }
+
+    /* ── REVEAL ANIMATION ───────────────────────────────────────────────── */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .5s ease, transform .5s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ─────────────────────────────────────────────────────── */
+    @media (max-width: 960px) {
+      nav { padding: 0 20px; }
+      .wrap, .hero-inner, .trust, .contact-inner { padding-left: 20px; padding-right: 20px; }
+      .trust { padding: 20px; }
+      .trust-divider { display: none; }
+      .hero h1 { font-size: clamp(30px, 7vw, 44px); }
+      .hero-usps { grid-template-columns: 1fr; }
+      .p-grid { grid-template-columns: 1fr; }
+      .case-card { grid-template-columns: 1fr; gap: 24px; }
+      .case-visual { position: static; order: -1; max-height: 220px; overflow: hidden; }
+      .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+      .form-row { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 12px; text-align: center; padding: 20px; }
+    }
+    @media (max-width: 640px) {
+      .hero-inner { padding: 72px 20px 56px; }
+      .form-card { padding: 24px 20px; }
+      .svc-item { flex-direction: column; gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────────────────────────────── -->
+<nav>
+  <a href="/" class="nav-logo">Curro<span>.</span></a>
+  <div class="nav-cta">
+    <a href="mailto:casascurro@gmail.com">casascurro@gmail.com</a>
+    <a href="#contact" class="btn-primary" style="font-size:13px;padding:8px 18px;">Request an Audit</a>
+  </div>
+</nav>
+
+<!-- ── HERO ────────────────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Shopify Consulting — Available for new projects</div>
+    <h1>Engineering high-performance,<br><em>high-conversion</em> Shopify stores.</h1>
+    <p class="hero-sub">
+      Custom Liquid code. No app bloat. No theme constraints. Built by a technical
+      product leader who has shipped AI systems at Amazon scale — now applying that
+      infrastructure thinking to e-commerce.
+    </p>
+
+    <!-- USP differentiators -->
+    <div class="hero-usps">
+      <div class="hero-usp">
+        <div class="hero-usp-icon">📊</div>
+        <div class="hero-usp-text">
+          <strong>AI-powered weekly KPI reporting</strong>
+          Autonomous dashboards that give founders instant business visibility —
+          no manual data pulls, no spreadsheet wrangling.
+        </div>
+      </div>
+      <div class="hero-usp">
+        <div class="hero-usp-icon">⚡</div>
+        <div class="hero-usp-text">
+          <strong>Zero theme dependency</strong>
+          Custom code means your brand's vision gets built exactly as intended,
+          regardless of your current theme or platform limitations.
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Request a Store Audit</a>
+      <a href="#case-study" class="btn-outline">See the Arquia case study</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRUST BANNER ─────────────────────────────────────────────────────── -->
+<div class="trust">
+  <div class="trust-inner">
+    <span class="trust-label">Clients &amp; Partners</span>
+    <div class="trust-divider"></div>
+    <div class="trust-brands">
+      <div class="trust-brand">
+        <img src="assets/arquia-logo.png" alt="Arquia" loading="lazy"/>
+        Arquia
+      </div>
+      <div class="trust-brand placeholder">Client 2 — update when live</div>
+      <div class="trust-brand placeholder">Client 3 — update when live</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── PARADIGM GRID ─────────────────────────────────────────────────────── -->
+<section class="paradigm">
+  <div class="wrap">
+    <div class="eyetag">How stores break</div>
+    <h2 style="font-size:clamp(24px,3vw,38px);font-weight:700;letter-spacing:-.025em;line-height:1.15;margin-bottom:0;">
+      Most Shopify stores don't have a<br><em style="font-family:var(--serif);font-style:italic;font-weight:300;color:var(--green);">traffic problem.</em>
+    </h2>
+    <div class="p-grid">
+      <div class="p-col reveal">
+        <div class="p-col-num">01 /</div>
+        <span class="p-col-icon">🐌</span>
+        <h3>Performance Drag</h3>
+        <div class="p-col-sub">Symptom → Root Cause</div>
+        <p>
+          Stacked third-party apps, render-blocking scripts, unoptimised images.
+          Each adds 200–400ms. Compounded, they cut your conversion rate in half
+          before a customer reads your headline.
+        </p>
+      </div>
+      <div class="p-col reveal">
+        <div class="p-col-num">02 /</div>
+        <span class="p-col-icon">🕳️</span>
+        <h3>Conversion Leaks</h3>
+        <div class="p-col-sub">Symptom → Root Cause</div>
+        <p>
+          Confusing product hierarchies, missing social proof at decision points,
+          weak variant UX, no sticky conversion bars. Customers arrive and leave
+          without ever reaching "Add to Cart."
+        </p>
+      </div>
+      <div class="p-col reveal">
+        <div class="p-col-num">03 /</div>
+        <span class="p-col-icon">🏗️</span>
+        <h3>Architecture Debt</h3>
+        <div class="p-col-sub">Symptom → Root Cause</div>
+        <p>
+          Theme customizations layered on top of customizations. Metafields
+          inconsistent or missing. No scalable product data model. Marketing
+          can't move fast because engineering is always firefighting.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CASE STUDY ────────────────────────────────────────────────────────── -->
+<section class="case-study" id="case-study">
+  <div class="wrap">
+    <div class="eyetag">Case Study</div>
+    <h2 style="font-size:clamp(24px,3vw,38px);font-weight:700;letter-spacing:-.025em;line-height:1.15;margin-bottom:0;">
+      From broken infrastructure<br>to <em style="font-family:var(--serif);font-style:italic;font-weight:300;color:var(--green);">4× projected growth.</em>
+    </h2>
+    <div class="case-card reveal">
+      <div>
+        <div class="case-header">
+          <img src="assets/arquia-logo.png" alt="Arquia" class="case-logo" loading="lazy"/>
+          <div>
+            <div class="case-co">Arquia · shoparquia.com</div>
+            <div class="case-period">Feb 2026 – Present</div>
+          </div>
+        </div>
+        <div class="case-role">Chief Product &amp; Growth Officer</div>
+        <h3>Full Shopify re-architecture and AI-powered growth engine</h3>
+        <p>
+          Took full technical and growth ownership of a premium DTC accessories brand.
+          Re-architected the Liquid theme stack from the ground up, rebuilt the product
+          data model with consistent metafield infrastructure, and introduced custom
+          JavaScript systems for bundle management and variant-linked galleries. Then
+          wired an AI reporting layer on top — so every growth decision is evidence-based
+          from day one.
+        </p>
+        <div class="metrics-grid">
+          <div class="metric">
+            <div class="metric-num">3×</div>
+            <div class="metric-label">Conversion Rate</div>
+          </div>
+          <div class="metric">
+            <div class="metric-num">+25%</div>
+            <div class="metric-label">Repeat Purchase Rate</div>
+          </div>
+          <div class="metric">
+            <div class="metric-num">+20%</div>
+            <div class="metric-label">Average Order Value</div>
+          </div>
+          <div class="metric">
+            <div class="metric-num">4× proj.</div>
+            <div class="metric-label">YoY Revenue Growth</div>
+          </div>
+        </div>
+
+        <div class="case-callout">
+          <span class="callout-label">AI Automation</span>
+          <p class="callout-text">
+            Automated 80% of core operational reporting via a custom Google Apps Script
+            pipeline feeding weekly AI-powered business dashboards — replacing hours of
+            manual analysis with instant founder-ready insights.
+          </p>
+        </div>
+
+        <a href="https://shoparquia.com" target="_blank" rel="noopener noreferrer" class="case-link">
+          Visit shoparquia.com
+        </a>
+      </div>
+      <div class="case-visual">
+        <img src="assets/arquia-site.png" alt="Arquia Shopify store" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICES ──────────────────────────────────────────────────────────── -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="eyetag">Services</div>
+    <h2 style="font-size:clamp(24px,3vw,38px);font-weight:700;letter-spacing:-.025em;line-height:1.15;margin-bottom:0;">
+      What I build — and<br><em style="font-family:var(--serif);font-style:italic;font-weight:300;color:var(--green);">why it holds.</em>
+    </h2>
+    <div class="svc-list">
+
+      <div class="svc-item reveal">
+        <span class="svc-num">01 /</span>
+        <div class="svc-body">
+          <div class="svc-name">System Audits</div>
+          <p class="svc-desc">
+            A full technical and conversion audit of your store: Core Web Vitals,
+            Liquid architecture, app dependency map, metafield coverage, funnel
+            drop-off analysis, and a prioritised action plan ranked by revenue
+            impact. Deliverable in 5 business days.
+          </p>
+        </div>
+      </div>
+
+      <div class="svc-item reveal">
+        <span class="svc-num">02 /</span>
+        <div class="svc-body">
+          <div class="svc-name">Speed Engineering</div>
+          <p class="svc-desc">
+            Targeted performance surgery: script deferral, image pipeline
+            optimisation, critical CSS extraction, lazy-loading, and app
+            replacement with native Liquid or lightweight custom code. Measurable
+            LCP and CLS improvements without touching your store's design.
+          </p>
+        </div>
+      </div>
+
+      <div class="svc-item reveal">
+        <span class="svc-num">03 /</span>
+        <div class="svc-body">
+          <div class="svc-name">Custom Theme Architecture</div>
+          <p class="svc-desc">
+            Building clean, reusable native Liquid sections — and when your theme
+            can't do it natively, custom JavaScript and CSS that makes it happen
+            anyway. Your brand's vision, not the theme's limitations. Zero app
+            dependencies. No performance penalties. Marketing moves at speed;
+            codebase stays clean.
+          </p>
+        </div>
+      </div>
+
+      <div class="svc-item reveal">
+        <span class="svc-num">04 /</span>
+        <div class="svc-body">
+          <div class="svc-name">AI Operations &amp; Reporting</div>
+          <p class="svc-desc">
+            Custom AI integrations wired directly into your store data: automated
+            weekly KPI reports, predictive inventory signals, and founder-ready
+            dashboards — built with Google Apps Script, Python, and the Claude API.
+            Founders get instant business visibility; no manual data pulls, no
+            expensive BI tools.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIAL ───────────────────────────────────────────────────────── -->
+<section class="testimonial">
+  <div class="wrap">
+    <div class="testimonial-inner">
+      <div class="eyetag" style="justify-content:center;">Client words</div>
+      <!-- TODO: Replace with real client quote from [Client Name] once approved -->
+      <div class="testimonial-placeholder reveal">
+        <p>
+          A real client testimonial will appear here once approved.<br/>
+          Placeholder — do not fabricate a name or quote.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT FORM ──────────────────────────────────────────────────────── -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="eyetag">Get in touch</div>
+    <h2 style="font-size:clamp(24px,3vw,38px);font-weight:700;letter-spacing:-.025em;line-height:1.15;margin-bottom:4px;">
+      Let's audit your store.<br><em style="font-family:var(--serif);font-style:italic;font-weight:300;color:var(--green);">No pitch. Just diagnosis.</em>
+    </h2>
+    <p style="font-size:15px;color:var(--ink-2);margin-bottom:0;">
+      Tell me about your store and the biggest friction point. I'll come back
+      with a specific take — not a sales deck.
+    </p>
+
+    <!-- TODO: Wire FORM_ACTION to Formspree endpoint: https://formspree.io/f/[ID] -->
+    <div class="form-card">
+      <form id="auditForm" onsubmit="handleSubmit(event)" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Smith" required/>
+          </div>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" placeholder="jane@yourbrand.com" required/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="store">Store URL</label>
+          <input type="url" id="store" name="store_url" placeholder="https://yourbrand.com" required/>
+        </div>
+        <div class="form-group">
+          <label for="bottleneck">Primary bottleneck</label>
+          <select id="bottleneck" name="bottleneck" required>
+            <option value="" disabled selected>Select the biggest issue</option>
+            <option value="performance">Site speed / Core Web Vitals</option>
+            <option value="conversion">Low conversion rate</option>
+            <option value="architecture">Theme / code complexity</option>
+            <option value="reporting">No reliable data / reporting</option>
+            <option value="aov">Low average order value</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="context">Anything else I should know? <span style="color:var(--ink-3)">(optional)</span></label>
+          <textarea id="context" name="context" placeholder="Current monthly revenue, platform plan, timeline, goals..."></textarea>
+        </div>
+        <button type="submit" class="btn-primary form-submit">Request My Store Audit</button>
+      </form>
+
+      <div class="form-success" id="formSuccess">
+        <p>Request received.</p>
+        <span>I'll review your store and reply within 24 hours with a specific take.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ────────────────────────────────────────────────────────────── -->
+<footer>
+  <span class="footer-copy">&copy; 2026 Curro Casas</span>
+  <div class="footer-links">
+    <a href="https://linkedin.com/in/currocasas" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://github.com/currocasas88" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="mailto:casascurro@gmail.com">Email</a>
+  </div>
+</footer>
+
+<script>
+  /* ── Reveal on scroll ─────────────────────────────────────────────────── */
+  (function () {
+    const els = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver(
+      (entries) => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }),
+      { threshold: 0.1 }
+    );
+    els.forEach(el => io.observe(el));
+  })();
+
+  /* ── Form submit (JS success state — no backend yet) ───────────────────
+     TODO: replace fetch target with Formspree endpoint when available.    */
+  function handleSubmit(e) {
+    e.preventDefault();
+    const form = document.getElementById('auditForm');
+    const success = document.getElementById('formSuccess');
+
+    /* Basic validation */
+    const name  = form.querySelector('#name').value.trim();
+    const email = form.querySelector('#email').value.trim();
+    const store = form.querySelector('#store').value.trim();
+    const bn    = form.querySelector('#bottleneck').value;
+
+    if (!name || !email || !store || !bn) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+
+    /* When Formspree endpoint is available, replace the block below:
+    fetch('https://formspree.io/f/[ID]', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ name, email, store_url: store, bottleneck: bn,
+                             context: form.querySelector('#context').value })
+    }).then(r => { if (r.ok) showSuccess(); }); */
+
+    showSuccess();
+  }
+
+  function showSuccess() {
+    document.getElementById('auditForm').style.display = 'none';
+    const s = document.getElementById('formSuccess');
+    s.style.display = 'block';
+  }
+</script>
+
+</body>
+</html>

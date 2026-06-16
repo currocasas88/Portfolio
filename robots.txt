@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /consulting
+
+User-agent: Googlebot
+Disallow: /consulting
