@@ -29,25 +29,45 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// Brummell extraction loop: photo → read → pieces land. Static (phase 2) without JS or with reduced motion.
+// Brummell First Closet loop, ported from brummell.tech: photo → read → 5 pieces land → 2 more join →
+// look 2 renders with Try-On. Static on look 2 without JS or with reduced motion.
 const bmEx = document.getElementById('bm-ex');
 if (bmEx && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const status = bmEx.querySelector('.bm-ex-status');
-  const steps = [
-    [0, 'One photo of today\'s outfit.', 1100],
-    [1, 'Reading the photo.', 1600],
-    [2, '5 pieces added to your wardrobe.', 4200],
+  const chip = bmEx.querySelector('.bm-chip');
+  const pause = bmEx.querySelector('.bm-pause');
+  const STATUS = [
+    "One photo of today's outfit.",
+    'Reading the photo.',
+    '5 pieces added to your wardrobe.',
+    '2 more pieces join them.',
+    'Look 2, put together from pieces you own.',
   ];
-  let i = 0, timer = null;
-  const tick = () => {
-    const [phase, text, hold] = steps[i];
+  const SCHEDULE = [[1, 250], [2, 1400], [3, 3400], [4, 4900]];
+  const CYCLE_MS = 8300;
+  let timers = [], inView = false, paused = false;
+  const setPhase = phase => {
     bmEx.dataset.phase = phase;
-    status.textContent = text;
-    i = (i + 1) % steps.length;
-    timer = setTimeout(tick, hold);
+    status.textContent = STATUS[phase];
+    chip.textContent = phase === 4 ? 'Look 2 · Try-On' : 'Your photo';
   };
+  const stop = () => { timers.forEach(clearTimeout); timers = []; };
+  const run = () => {
+    stop();
+    if (!inView || paused) return;
+    setPhase(0);
+    timers = SCHEDULE.map(([phase, at]) => setTimeout(() => setPhase(phase), at));
+    timers.push(setTimeout(run, CYCLE_MS));
+  };
+  pause.hidden = false;
+  pause.addEventListener('click', () => {
+    paused = !paused;
+    pause.textContent = paused ? 'Play' : 'Pause';
+    pause.setAttribute('aria-pressed', paused);
+    paused ? stop() : run();
+  });
   new IntersectionObserver(([e]) => {
-    if (e.isIntersecting && !timer) { i = 0; tick(); }
-    else if (!e.isIntersecting && timer) { clearTimeout(timer); timer = null; }
+    inView = e.isIntersecting;
+    inView ? run() : stop();
   }, { threshold: 0.35 }).observe(bmEx);
 }
