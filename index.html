@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Curro Casas — AI Product Leader & Builder</title>
-  <meta name="description" content="Senior product leader with 12+ years at Amazon, ADP and Airbus. Building AI platforms and autonomous agents."/>
+  <meta name="description" content="AI product leader with 13+ years at Amazon, ADP and Airbus. Builder of Brummell, an AI styling app, Shopify app and MCP server built end to end."/>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231a7a4a'/><text y='75' font-size='72' x='50' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>C</text></svg>"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/>
@@ -18,35 +18,17 @@
   <img id="lbimg" src="" alt=""/>
 </div>
 
-<!-- Resume modal -->
-<div class="ov" id="rov" onclick="if(event.target===this)closeR()">
-  <div class="mod">
-    <h3>Download Resume</h3>
-    <p>Two tailored versions—choose the one that matches your role focus.</p>
-    <div class="ro">
-      <a href="assets/resume-dx.pdf" download="Curro Casas - DX.pdf" class="ropt">
-        <strong>AI Platform & DX</strong>
-        <span style="display:block; font-size:11px; opacity:.7;">For platform, DX, and AI engineering roles</span>
-      </a>
-      <a href="assets/resume-growth.pdf" download="Curro Casas - Growth.pdf" class="ropt">
-        <strong>Growth & Product</strong>
-        <span style="display:block; font-size:11px; opacity:.7;">For growth, monetization, and consumer product roles</span>
-      </a>
-    </div>
-    <button class="mc" onclick="closeR()">Close</button>
-  </div>
-</div>
-
 <!-- Nav -->
 <nav>
   <a href="#top" class="logo">Curro<span>.</span></a>
   <ul class="nav-links">
+    <li><a href="#brummell">Brummell</a></li>
     <li><a href="#builds">Builds</a></li>
     <li><a href="#work">Work</a></li>
     <li><a href="#about">About</a></li>
   </ul>
   <div class="nav-r">
-    <button onclick="openR()" class="bg">Resume</button>
+    <a href="assets/CurroCasas-resume.pdf" download="Curro Casas.pdf" class="bg">Resume</a>
     <a href="https://calendly.com/casascurro" target="_blank" class="bn">Book a call</a>
   </div>
 </nav>
@@ -56,23 +38,24 @@
   <div class="hl">
     <div class="badge">Open for product leadership roles</div>
     <h1>I build the AI systems,<br>then <em>scale the products</em><br>around them.</h1>
-    <p class="hsub">12+ years at Amazon, ADP and Airbus shipping AI platforms, developer tools and autonomous agents. Pursuing VP / Director Product roles in New York and Spain.</p>
+    <p class="hsub">13+ years leading AI platforms at Amazon, ADP and Airbus. Since May I have been building <a href="#brummell" class="hl-link">Brummell</a>, an AI-native styling product, from a blank repo to a live beta: strategy, specs and code. Pursuing VP / Director Product roles in New York and Spain.</p>
     <div class="hr-mobile">
       <img class="photo" src="assets/photo.jpg" alt="Curro Casas"/>
       <div class="stats">
-        <div class="stat"><div class="sn">12<span>+</span></div><div class="sl">Years in Product & AI</div></div>
+        <div class="stat"><div class="sn">13<span>+</span></div><div class="sl">Years in Product & AI</div></div>
         <div class="stat"><div class="sn">600<span>M+</span></div><div class="sl">Devices on platform</div></div>
-        <div class="stat"><div class="sn">10<span>+</span></div><div class="sl">AI agents in production</div></div>
+        <div class="stat"><div class="sn">800<span>+</span></div><div class="sl">Commits shipped at Brummell</div></div>
         <div class="stat"><div class="sn">80<span>+</span></div><div class="sl">Teams aligned</div></div>
         <div class="stat"><div class="sn">1.1<span>M</span></div><div class="sl">Enterprise clients</div></div>
       </div>
     </div>
     <div class="ha">
       <a href="https://calendly.com/casascurro" target="_blank" class="bn">Book a call</a>
-      <a href="#work" class="bg">See case studies</a>
+      <a href="#brummell" class="bg">See what I'm building</a>
     </div>
     <div class="ls">
       <span class="lsl">Background</span>
+      <span class="lp">Brummell</span>
       <span class="lp">Amazon</span>
       <span class="lp">ADP</span>
       <span class="lp">Airbus</span>
@@ -84,11 +67,136 @@
   <div class="hr">
     <img class="photo" src="assets/photo.jpg" alt="Curro Casas"/>
     <div class="stats">
-      <div class="stat"><div class="sn">12<span>+</span></div><div class="sl">Years in Product & AI</div></div>
+      <div class="stat"><div class="sn">13<span>+</span></div><div class="sl">Years in Product & AI</div></div>
       <div class="stat"><div class="sn">600<span>M+</span></div><div class="sl">Devices on platform</div></div>
-      <div class="stat"><div class="sn">10<span>+</span></div><div class="sl">AI agents in production</div></div>
+      <div class="stat"><div class="sn">800<span>+</span></div><div class="sl">Commits shipped at Brummell</div></div>
       <div class="stat"><div class="sn">80<span>+</span></div><div class="sl">Teams aligned</div></div>
       <div class="stat"><div class="sn">1.1<span>M</span></div><div class="sl">Enterprise clients</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- Brummell -->
+<section id="brummell">
+  <div class="ey">Independent build · May 2026 – present</div>
+  <h2>What happens when a platform leader<br><em>builds the product end to end</em></h2>
+
+  <div class="bm-hero">
+    <div>
+      <div class="ch">
+        <img src="assets/brummell/brummell-icon.png" alt="Brummell" class="cl2"/>
+        <div><div class="cco">Brummell · brummell.tech</div><div class="cp">May 2026 – Present · Independent build</div></div>
+      </div>
+      <div class="cr">Product, Engineering &amp; AI · built solo</div>
+      <h3>An AI stylist that dresses you from the clothes you already own</h3>
+      <p>After four years aligning 80+ teams on Alexa's AI platform, I wanted to prove I could take an AI product from a blank repo to real users with my own hands. Brummell is the result: a consumer app, a merchant app and an agent-ready API, all running on one shared data layer.</p>
+      <p>I own all of it: strategy, product specs, architecture, code, AI evals, pricing, legal and go-to-market. Claude Code agents are my engineering team. I run them the way I ran teams at Amazon, with written specs, definitions of done and quality gates.</p>
+      <div class="cl">
+        <a href="https://brummell.tech" target="_blank" class="clink">Visit brummell.tech</a>
+        <a href="https://brummell.tech/merchants" target="_blank" class="ca">For merchants</a>
+      </div>
+    </div>
+    <div class="bm-phones">
+      <img src="assets/brummell/a22-outfit-check.webp" alt="Brummell Outfit Check: AI judges an outfit against the chosen occasion" loading="lazy" onclick="openLB(this)"/>
+      <img src="assets/brummell/a24-recreate-look.webp" alt="Brummell Recreate a look: rebuilds an inspiration photo from the user's own wardrobe" loading="lazy" onclick="openLB(this)"/>
+      <img src="assets/brummell/a23-store-check.webp" alt="Brummell Store check: shows which outfits a new piece would create before buying" loading="lazy" onclick="openLB(this)"/>
+    </div>
+  </div>
+
+  <div class="bm-scale">
+    <div class="out"><div class="on">4</div><div class="ol">Products built</div></div>
+    <div class="out"><div class="on">800+</div><div class="ol">Commits in 5 months</div></div>
+    <div class="out"><div class="on">115</div><div class="ol">Product specs written</div></div>
+    <div class="out"><div class="on">100+</div><div class="ol">Serverless functions</div></div>
+    <div class="out"><div class="on">1,400+</div><div class="ol">Automated tests (Shopify app)</div></div>
+  </div>
+
+  <div class="bm-prods">
+    <div class="card">
+      <span class="tag">Consumer · iPhone</span>
+      <h3>Brummell app</h3>
+      <p>Daily outfits from your own wardrobe, matched to weather and occasion. Vision AI turns one photo, your camera roll or forwarded order emails into a digital wardrobe. Includes Outfit Check, Store Check and Recreate a Look. Brummell+ subscription. Live on TestFlight.</p>
+    </div>
+    <div class="card">
+      <span class="tag">B2B · Shopify</span>
+      <h3>Brummell for Merchants</h3>
+      <p>The same pairing engine on merchant product pages: Complete the Look, a cart companion and virtual try-on. Lift is measured against a held-out control group with a sample-size gate. Each storefront script must stay inside a 40&nbsp;KB budget.</p>
+    </div>
+    <div class="card">
+      <span class="tag">AI agents · MCP</span>
+      <h3>Brummell MCP server</h3>
+      <p>Lets any AI assistant read a shopper's wardrobe with OAuth 2.1 consent, so it can suggest outfits or avoid duplicate purchases. The store never sees the closet. Read-only by design.</p>
+    </div>
+    <div class="card">
+      <span class="tag a">Beyond code</span>
+      <h3>Everything else</h3>
+      <p>Everything a real product needs: versioned Privacy Policy and Terms, biometric-safe vision prompts (clothing only, never faces), a vendor register and record of processing, a security audit, App Store and Shopify compliance, pricing and outbound GTM.</p>
+    </div>
+  </div>
+  <div class="stk bm-stk"><span class="pi">TypeScript</span><span class="pi">React Native / Expo</span><span class="pi">Supabase · Postgres · pgvector</span><span class="pi">Claude API (Haiku, Sonnet, Opus)</span><span class="pi">Shopify Liquid + App Extensions</span><span class="pi">MCP</span><span class="pi">Next.js · Vercel</span><span class="pi">PostHog · Sentry · RevenueCat</span><span class="pi">Claude Code</span></div>
+
+  <div class="bm-block">
+    <div class="bm-lbl">How I run a one-person product org</div>
+    <div class="bm-ops">
+      <div>
+        <h4>Strategy before code</h4>
+        <p>Every feature starts as a written spec and decision record. Before the beta, I set phase gates and kill conditions, such as stopping and redesigning the matcher if fewer than 60% of Day-1 users would wear a suggestion. The data decides what gets built next, not my enthusiasm.</p>
+      </div>
+      <div>
+        <h4>AI agents as the engineering team</h4>
+        <p>I assign each task to a model and effort level, with an explicit definition of done. I learned the hard way that agents will fake completion and game a grep-based "done" check. Now "done" means the verification actually ran and passed.</p>
+      </div>
+      <div>
+        <h4>Quality as a system</h4>
+        <p>Golden-set evals gate every prompt or model change. A weekly latency regression job runs in CI. Row-level security covers every table. Performance budgets are enforced down to the byte.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bm-block">
+    <div class="bm-lbl">Early results: measured, not claimed</div>
+    <p class="bm-note">Brummell is in private beta, and user numbers are too early to mean anything yet. These are the results I can measure honestly.</p>
+    <div class="bm-res">
+      <div class="out"><div class="on">&minus;85%</div><div class="ol">AI cost per image, accuracy held at 98.6%</div></div>
+      <div class="out"><div class="on">2&times;</div><div class="ol">Outfit Check pass rate, at $0.0002 a call</div></div>
+      <div class="out"><div class="on">3.2s&rarr;0.2s</div><div class="ol">Item screen first paint</div></div>
+      <div class="out"><div class="on">1.25&rarr;10</div><div class="ol">Distinct looks per daily feed</div></div>
+      <div class="out"><div class="on">4,203</div><div class="ol">Competitor reviews mined for positioning</div></div>
+    </div>
+  </div>
+
+  <div class="bm-block">
+    <div class="bm-lbl">Decisions &amp; learnings</div>
+    <div class="bm-learn">
+      <div class="dec"><strong>Don't trust your own judge</strong>My LLM-as-judge agreed with a professional stylist's ratings at chance level (&kappa; = 0.02). I stopped paying for it and anchored quality on expert labels and real users instead. An eval is a product with its own accuracy problem.</div>
+      <div class="dec"><strong>Only sell what's proven</strong>Wardrobe context cut "already owns this" shopping picks from 48% to 29%, but it didn't prove the picks were "better." So the merchant pitch became duplicate avoidance, and any revenue claim waits for a real A/B test.</div>
+      <div class="dec"><strong>The cheaper model can be the better product</strong>Moving vision and Outfit Check to a smaller model cut cost 5&ndash;8&times; while quality went up. That only worked because a golden-set eval gated every swap.</div>
+      <div class="dec"><strong>Propose, don't elicit</strong>The core 1-star story across 4,203 competitor reviews was hours of setup followed by a paywall. Brummell shows outfits before a single upload, infers what it can and lets users correct by exception.</div>
+    </div>
+  </div>
+
+  <div class="bm-block">
+    <div class="bm-lbl">What 600M devices taught me, and what zero users did</div>
+    <div class="bm-cmp">
+      <div class="bm-row bm-rh"><span></span><span>At Amazon</span><span>At Brummell</span></div>
+      <div class="bm-row"><span>Scope</span><span>Aligned 80+ teams around one platform layer</span><span>Own every layer: product, code, data, legal, pricing, GTM</span></div>
+      <div class="bm-row"><span>Cost</span><span>Cut compute cost 68% as a platform target</span><span>Every API call is my money: cost logged per call and a $2-per-user monthly guardrail</span></div>
+      <div class="bm-row"><span>Speed</span><span>Release cycle from 5 weeks to under 1</span><span>380+ logged releases in 5 months</span></div>
+      <div class="bm-row"><span>Trust</span><span>Legal, privacy and security had dedicated teams</span><span>Wrote the privacy policy, vendor register and security audit myself</span></div>
+      <div class="bm-row"><span>Evidence</span><span>Decisions backed by billions of interactions</span><span>Decisions made at n&lt;15, so kill conditions define what counts as signal</span></div>
+    </div>
+  </div>
+
+  <div class="bm-cta">
+    <div>
+      <h3>Why this matters to your team</h3>
+      <p>AI has collapsed the distance between deciding and building. I can set strategy across an 80-team platform, and I can personally take a product from a blank repo to a live beta. If you are building an AI product org that needs to ship like a startup, let's talk.</p>
+    </div>
+    <div class="ca2">
+      <a href="https://calendly.com/casascurro" target="_blank" class="bn">Book a call</a>
+      <a href="assets/CurroCasas-resume.pdf" download="Curro Casas.pdf" class="bg">Resume</a>
     </div>
   </div>
 </section>
@@ -138,7 +246,6 @@
       <span class="cb">Private · Reports from $99</span>
       <div class="stk"><span class="pi">Node.js</span><span class="pi">Claude API</span><span class="pi">Parallel Agents</span><span class="pi">HN + GitHub + G2</span><span class="pi">Pain Intelligence</span></div>
       <div class="cl">
-        <a href="assets/llm-observability-and-eval_2026-05-14_1809.html" target="_blank" class="ca">Sample Report</a>
         <a href="mailto:casascurro@gmail.com?subject=ZeroGaps Report Request" target="_blank" class="ca">Request a Report — $99</a> 
       </div>
     </div>
@@ -230,7 +337,7 @@
         <div class="dec"><strong>Key decision</strong>Built horizontal reusable systems rather than per-team solutions. Higher upfront cost but eliminated duplicated work across 80+ teams and became the foundation for every Alexa+ feature shipped after 2024.</div>
         <div class="outs">
           <div class="out"><div class="on">68%</div><div class="ol">Compute cost reduction</div></div>
-          <div class="out"><div class="on">&gt;99%</div><div class="ol">Response accuracy</div></div>
+          <div class="out"><div class="on">&gt;95%</div><div class="ol">Response accuracy</div></div>
           <div class="out"><div class="on">+70%</div><div class="ol">YoY dev revenue</div></div>
           <div class="out"><div class="on">5&rarr;&lt;1wk</div><div class="ol">Release cycle</div></div>
         </div>
@@ -329,9 +436,9 @@
     <div>
       <div class="abio">
         Product and technology leader who moves between <strong>executive strategy</strong> and hands-on building without losing a step.<br><br>
-        Built AI platforms at <strong>Amazon</strong> powering billions of weekly interactions. Shipped autonomous agents as a solo operator. Led global teams across New York and Barcelona.<br><br>
-        Trained as an engineer (BSc Industrial Engineering and MSc Energy Engineering, Universidad de Sevilla and TU Berlin), sharpened at <strong>ESADE Business School</strong>, and tested across Amazon, ADP, Airbus, Arquia and a travel-tech startup I founded.<br><br>
-        Pursuing VP / Director Product roles where AI depth and product judgment both matter.
+        Built AI platforms at <strong>Amazon</strong> powering billions of weekly interactions and led global teams across New York and Barcelona. Since May 2026 I have been building <strong>Brummell</strong> end to end, as its sole product lead and engineer, with AI agents as my engineering team.<br><br>
+        Trained as an engineer (BSc Industrial Engineering and MSc Energy Engineering, Universidad de Sevilla and TU Berlin), sharpened at <strong>ESADE Business School</strong>, and tested across Amazon, ADP, Airbus, Arquia, Brummell and a travel-tech startup I founded.<br><br>
+        Pursuing VP / Director Product roles where AI depth, product taste and the ability to build all matter.
       </div>
       <div class="ps">
         <div class="pi2">&#9917; Soccer</div>
@@ -378,7 +485,7 @@
   <p class="cs">Open to VP / Director Product roles &middot; New York &middot; Spain &middot; US or Europe Remote</p>
   <div class="ca2">
     <a href="https://calendly.com/casascurro" target="_blank" class="bn">Book a call</a>
-    <button onclick="openR()" class="bg">Resume</button>
+    <a href="assets/CurroCasas-resume.pdf" download="Curro Casas.pdf" class="bg">Resume</a>
   </div>
 </section>
 

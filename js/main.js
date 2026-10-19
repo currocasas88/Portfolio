@@ -10,13 +10,9 @@ function closeLB() {
   document.body.style.overflow = '';
 }
 
-// Resume modal
-function openR() { document.getElementById('rov').classList.add('open'); }
-function closeR() { document.getElementById('rov').classList.remove('open'); }
-
 // Keyboard shortcuts
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') { closeR(); closeLB(); }
+  if (e.key === 'Escape') closeLB();
 });
 
 // Smooth active nav highlight
